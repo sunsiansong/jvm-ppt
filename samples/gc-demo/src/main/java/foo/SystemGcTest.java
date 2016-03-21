@@ -21,22 +21,16 @@ public class SystemGcTest {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             String cmd = scanner.nextLine();
-            switch (cmd) {
-                case "gc":
-                    System.gc();
-                    break;
-                case "pause":
-                    pauseFlag = !pauseFlag;
-                    break;
-                case "1":
-                    sleep = 1;
-                    break;
-                case "2":
-                    sleep = 2;
-                    break;
-                case "3":
-                    sleep = 3;
-                    break;
+            if (cmd.equals("gc")) {
+                System.gc();
+            }else if (cmd.equals("pause")) {
+                pauseFlag = !pauseFlag;
+            }else if (cmd.equals("1")) {
+                sleep = 1;
+            }else if (cmd.equals("2")) {
+                sleep = 2;
+            }else {
+                System.out.println("-");
             }
         }
 

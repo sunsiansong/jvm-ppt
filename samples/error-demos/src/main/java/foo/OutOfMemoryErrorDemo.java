@@ -10,6 +10,9 @@ import java.util.Map;
  * java -Xms6m  -Xmx6m foo.OutOfMemoryErrorDemo
  * java -Xms6m  -Xmx12m foo.OutOfMemoryErrorDemo
  * <p/>
+ * jhap xx.hprof
+ * <br />
+ * select user.age.value from foo.domain.User user
  * compare ok and error
  */
 public class OutOfMemoryErrorDemo {
@@ -26,7 +29,7 @@ public class OutOfMemoryErrorDemo {
     private static void error() {
         int count = 0;
         while (true) {
-            User u = new User("name", 18, "male", new Date());
+            User u = new User("name", count, "male", new Date());
             System.out.println(++count);
             USER_MAP.put(count, u);
         }
